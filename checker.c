@@ -6,10 +6,9 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 02:10:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/13 04:09:37 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/13 04:34:24 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -59,26 +58,6 @@ static void ft_free_split(char **pointer)
     }
     free(pointer);
 }
-// char **ft_join_all_argument(char **argv, int argc)
-// {
-// 	int i;
-// 	char *pointer;
-// 	char **secand_pointer;
-// 	char *save_address;
-	
-// 	pointer = ft_strdup("");
-// 	i = 1;
-// 	while (argv[i])
-// 	{
-// 		save_address = pointer;
-// 		pointer = ft_strjoin(pointer, argv[i]);
-// 		free(save_address);
-// 		i++;		
-// 	}
-// 	secand_pointer = ft_split(pointer, ' ');
-// 	free(pointer);
-// 	return (secand_pointer);
-// }
 void ft_check_input(int ac, char **av)
 {
     long value;
@@ -108,10 +87,5 @@ void ft_check_input(int ac, char **av)
             ft_print_error("Error: Value out of range");
         i++;
     }
-    if(ac == 2)
-        free(pointer);
-    // else
-    // {
-    //     ft_free_split(pointer);    
-    // }
+    ft_free_split(pointer);
 }
