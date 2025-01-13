@@ -9,7 +9,7 @@ int main(int argc, char **argv)
         t_stack stack_b;
 
         ft_check_input(argc, argv);
-        printf("ss");
+        printf("ok");
     }
     return (0);
 }

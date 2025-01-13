@@ -17,5 +17,6 @@ typedef struct s_stack
 } t_stack;
 
 void ft_check_input(int ac, char **av);
+char **ft_join_all_argument(char **argv, int argc);
 
 #endif
