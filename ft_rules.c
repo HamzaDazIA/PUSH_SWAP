@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_rules.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 10:34:00 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/14 14:03:45 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/14 08:04:33 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/14 08:37:25 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int pa(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!lst || !new)
-		return ;
-	if (new != NULL)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+    
 }
