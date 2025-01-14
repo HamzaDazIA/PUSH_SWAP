@@ -6,12 +6,12 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/13 04:05:57 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/13 20:27:04 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+//maybe timeout here :]
 char **ft_join_all_argument(char **argv, int argc)
 {
 	int i;

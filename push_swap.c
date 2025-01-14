@@ -10,7 +10,7 @@ void ll(){
 
 int main(int argc, char **argv)
 {
-    //atexit(ll);
+    atexit(ll);
     if(argc > 1)
     {
         t_stack *stack_a;
@@ -20,6 +20,9 @@ int main(int argc, char **argv)
         
         stack_a = malloc(sizeof(t_stack));
         stack_b = malloc(sizeof(t_stack));
+
+        //check if is deja sortd 
+        
         printf("ok");
     }
 
