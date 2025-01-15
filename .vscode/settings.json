@@ -19,6 +19,7 @@
         "tuple": "c",
         "type_traits": "c",
         "vector": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "ft_rules2.C": "cpp"
     }
 }

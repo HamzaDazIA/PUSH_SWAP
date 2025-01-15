@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 09:33:59 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/15 11:32:27 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/15 13:39:46 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_push(t_stack **stack_to, t_stack   **stack_from)
+int rev_rotate(t_stack  **stack)
 {
-    if (ft_lstsize(stack_from) == 0)
-        return (0);
-    t_stack *tmp_from;
-    t_stack *tmp_to;
-    t_stack *tmp;
+    t_stack *head;
+    t_stack *last_node;
 
-    tmp_from = *stack_from;
-    tmp_to = *stack_to;
-    tmp = tmp_from;
-    tmp_from = tmp_from->next;
-    *stack_from = tmp_from;
-    if(tmp_to == NULL)
+    if (ft_lstsize(*stack) < 2)
+        return (0);
+        
+    head = *stack;
+    last_node = ft_lstlast(*stack);
+    while (head)
     {
-        tmp_to = tmp;
-        tmp->next = NULL;
-        *stack_to = tmp_to;
+        if (head->next->next = NULL)
+        {
+            head->next = NULL;
+            break;
+        }
+        head = head->next ;
     }
-    else
-        ft_lstadd_front(stack_to, tmp);
+    last_node->next = *stack;
+    *stack = last_node;
     return (1);
 }
+

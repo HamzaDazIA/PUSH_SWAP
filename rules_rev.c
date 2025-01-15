@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   rules_rev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 09:33:59 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/15 14:06:09 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/15 14:09:52 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "./push_swap.h"
 
-int ft_push(t_stack **stack_to, t_stack   **stack_from)
+int rra(t_stack  **stack_a)
 {
-    if (ft_lstsize(stack_from) == 0)
+    if (rev_rotate(stack_a) == 0)
         return (0);
-    t_stack *tmp_from;
-    t_stack *tmp_to;
-    t_stack *tmp;
-
-    tmp_from = *stack_from;
-    tmp_to = *stack_to;
-    tmp = tmp_from;
-    tmp_from = tmp_from->next;
-    *stack_from = tmp_from;
-    if(tmp_to == NULL)
-    {
-        tmp_to = tmp;
-        tmp->next = NULL;
-        *stack_to = tmp_to;
-    }
     else
-        ft_lstadd_front(stack_to, tmp);
+    {
+        ft_putendl_fd("rra",1);
+    }
+    return (1);
+}
+int rrb(t_stack  **stack_b)
+{
+    if (rev_rotate(stack_b) == 0)
+        return (0);
+    else
+    {
+        ft_putendl_fd("rrb",1);
+    }
     return (1);
 }

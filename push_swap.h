@@ -20,4 +20,6 @@ void ft_check_input(int ac, char **av);
 char **ft_join_all_argument(char **argv, int argc);
 int ft_push(t_stack **stack_to, t_stack   **stack_from);
 int ft_swap(t_stack **stack);
+int rotate(t_stack **stack);
+int rev_rotate(t_stack  **stack);
 #endif

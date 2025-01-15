@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 09:33:59 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/15 11:19:12 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/15 14:05:58 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_push(t_stack **stack_to, t_stack   **stack_from)
+int ra(t_stack  **stack_a)
 {
-    if (ft_lstsize(stack_from) == 0)
+    if (rotate(stack_a) == 0)
         return (0);
-    t_stack *tmp_from;
-    t_stack *tmp_to;
-    t_stack *tmp;
-
-    tmp_from = *stack_from;
-    tmp_to = *stack_to;
-    tmp = tmp_from;
-    tmp_from = tmp_from->next;
-    *stack_from = tmp_from;
-    if(tmp_to == NULL)
-    {
-        tmp_to = tmp;
-        tmp->next = NULL;
-        *stack_to = tmp_to;
-    }
     else
-        ft_lstadd_front(stack_to, tmp);
+    {
+        ft_putendl_fd("ra",1);
+    }
+    return (1);
+}
+
+int rb(t_stack  **stack_b)
+{
+    if (rotate(stack_b) == 0)
+        return (0);
+    else
+    {
+        ft_putendl_fd("rb",1);
+    }
+    return (1);
+}
+//khasni takid men dek if statmunt.
+
+int rr(t_stack  **stack_a, t_stack  **stack_b)
+{
+	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+		return (-1);
+	rotate(stack_a);
+	rotate(stack_b);
+    ft_putendl_fd("rr",1);
     return (1);
 }

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 09:33:59 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/15 10:53:24 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/15 14:08:50 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_push(t_stack **stack_to, t_stack   **stack_from)
+int rotate(t_stack **stack)
 {
-    if (ft_lstsize(stack_from) == 0)
-        return (0);
-    t_stack *tmp_from;
-    t_stack *tmp_to;
-    t_stack *tmp;
+    t_stack *head;
+    t_stack *last_ndoe;
 
-    tmp_from = *stack_from;
-    tmp_to = *stack_to;
-    tmp = tmp_from;
-    tmp_from = tmp_from->next;
-    *stack_from = tmp_from;
-    if(tmp_to == NULL)
-    {
-        tmp_to = tmp;
-        tmp->next = NULL;
-        *stack_to = tmp_to;
-    }
-    else
-        ft_lstadd_front(stack_to, tmp);
+    if (ft_lstsize(*stack) < 2)
+        return (0);
+    last_ndoe = ft_lstlast(*stack);
+    head = *stack;
+
+    last_ndoe->next = head;
+    *stack = head->next;
+    head->next = NULL;
     return (1);
 }
