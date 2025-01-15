@@ -48,9 +48,8 @@ int sb(t_stack  **stack)
 }
 int ss(t_stack **stack_a, t_stack **stack_b)
 {
-    if (ft_swap(stack_a) == 0 || ft_swap(stack_b) == 0)
-        return (0);
-    else
-        ft_putendl_fd("ss",1);
+    ft_swap(stack_a);
+    ft_swap(stack_b);
+    ft_putendl_fd("ss",1);
     return (1);
 }

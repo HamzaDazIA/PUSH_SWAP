@@ -32,3 +32,10 @@ int rrb(t_stack  **stack_b)
     }
     return (1);
 }
+
+void    rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	rev_rotate(stack_a);
+	rev_rotate(stack_b);
+	ft_putstr("rrr\n");
+}
