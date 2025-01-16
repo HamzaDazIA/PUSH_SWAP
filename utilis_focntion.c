@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 14:46:16 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 16:03:18 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,26 +75,6 @@ static void sort_arry(int size, int *arry)
 }
 
 
-void	index_stack(t_stack **stack)
-{
-	t_stack	*head;
-	int *arry;
-	int	i;
-	int size;
-	
-	size = ft_lstsize(*stack);
-	arry = malloc(size*sizeof(int));
-	i = 0;
-	while (i < size)
-	{
-		arry[i++] = head->value;
-		head = head->next;
-	}
-	sort_arry(size, arry);
-	assign_indices(stack, size, arry);
-	free (arry);	
-}
-
 static assign_indices(t_stack **stack, int size, int *arry)
 {
 	int i;
@@ -114,4 +94,24 @@ static assign_indices(t_stack **stack, int size, int *arry)
 		}
 		head = head ->next;
 	}
+}
+
+void	index_stack(t_stack **stack)
+{
+	t_stack	*head;
+	int *arry;
+	int	i;
+	int size;
+	
+	size = ft_lstsize(*stack);
+	arry = malloc(size*sizeof(int));
+	i = 0;
+	while (i < size)
+	{
+		arry[i++] = head->value;
+		head = head->next;
+	}
+	sort_arry(size, arry);
+	assign_indices(stack, size, arry);
+	free (arry);	
 }
