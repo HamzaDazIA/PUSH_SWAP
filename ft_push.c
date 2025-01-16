@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:32:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 13:39:46 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/16 16:36:57 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int rev_rotate(t_stack  **stack)
+int ft_push(t_stack **stack_to, t_stack   **stack_from)
 {
-    t_stack *head;
-    t_stack *last_node;
-
-    if (ft_lstsize(*stack) < 2)
+    if (ft_lstsize(*stack_from) == 0)
         return (0);
-        
-    head = *stack;
-    last_node = ft_lstlast(*stack);
-    while (head)
+    t_stack *tmp_from;
+    t_stack *tmp_to;
+    t_stack *tmp;
+
+    tmp_from = *stack_from;
+    tmp_to = *stack_to;
+    tmp = tmp_from;
+    tmp_from = tmp_from->next;
+    *stack_from = tmp_from;
+    if(tmp_to == NULL)
     {
-        if (head->next->next = NULL)
-        {
-            head->next = NULL;
-            break;
-        }
-        head = head->next ;
+        tmp_to = tmp;
+        tmp->next = NULL;
+        *stack_to = tmp_to;
     }
-    last_node->next = *stack;
-    *stack = last_node;
+    else
+        ft_lstadd_front(stack_to, tmp);
     return (1);
 }
-

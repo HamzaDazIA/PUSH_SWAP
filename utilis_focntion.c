@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 16:03:18 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 17:52:04 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void sort_arry(int size, int *arry)
 }
 
 
-static assign_indices(t_stack **stack, int size, int *arry)
+static void assign_indices(t_stack **stack, int size, int *arry)
 {
 	int i;
 	t_stack	*head;
@@ -105,6 +105,7 @@ void	index_stack(t_stack **stack)
 	
 	size = ft_lstsize(*stack);
 	arry = malloc(size*sizeof(int));
+	head = *stack;
 	i = 0;
 	while (i < size)
 	{
@@ -113,5 +114,6 @@ void	index_stack(t_stack **stack)
 	}
 	sort_arry(size, arry);
 	assign_indices(stack, size, arry);
+	
 	free (arry);	
 }

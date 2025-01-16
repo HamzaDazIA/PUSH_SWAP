@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:51:11 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 11:36:25 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 16:24:31 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	po = ft_lstlast(*lst);
 	po->next = new;
 }
-t_stack	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content)
 {
 	t_stack	*element;
 

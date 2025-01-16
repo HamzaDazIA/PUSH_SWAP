@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 16:11:08 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 18:02:03 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,39 @@
 #include <stdio.h>
 #include "fcntl.h"
 
-// void ll(){
-//     system("leaks a.out");
-//}
+void ll(){
+    system("leaks a.out");
+}
 
+void print_stack(t_stack *stack, const char *stack_name)
+{
+    printf("%s: ", stack_name);
+    while (stack)
+    {
+        printf("%d -> ", stack->value);
+        stack = stack->next;
+    }
+    printf("NULL\n");
+}
 static void necessary_ft(t_stack **stack, char **av, int ac)
 {
-    char *new;
-    char **pointerx2;
-    int  i;
-    
+    t_stack *new;
+    int i;
+    char **pointer;
+
     i = 0;
-    if (ac == 2)
-        pointerx2 = ft_spilt(av[1], ' ');
+    if(ac == 2)
+        pointer = ft_split(av[1], ' ');
     else
-        pointerx2 = ft_join_all_argument(av, ac);
-    while(pointerx2[i])
+        pointer = ft_join_all_argument(av, ac);
+    while(pointer[i])
     {
-        new = ft_lstnew(pointerx2[i]);
+        new = ft_lstnew(ft_atoi(pointer[i]));
         ft_lstadd_back(stack, new);
         i++;
     }
     index_stack(stack);
-    ft_free_split(pointerx2);
+    ft_free_split(pointer);
 }
 
 int main(int argc, char **argv)
@@ -53,7 +63,8 @@ int main(int argc, char **argv)
         *stack_a = NULL;
         *stack_b = NULL;
         necessary_ft(stack_a, argv, argc);
-        if (is_already_sortd)
+       // if (is_already_sortd(stack_a))
+        print_stack(*stack_a, "Stack A");
     }
 
     return (0);
