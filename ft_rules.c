@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 08:04:33 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/15 10:52:54 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 09:34:29 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int pa(t_stack **stack_a, t_stack **stack_b)
     return (1);
 }
 
-int pb(t_stack **stack_a, t_stack **stack_b)
+int pb(t_stack **stack_b, t_stack **stack_a)
 {
     if (ft_push(stack_b,stack_a) == 0)
         return (0);

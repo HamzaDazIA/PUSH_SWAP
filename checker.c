@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 02:10:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/13 19:17:23 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/16 09:53:58 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,18 @@ static int ft_is_number(char *str)
     return (1);
 }
 
-static void ft_free_split(char **pointer)
-{
-    int i = 0;
-
-    while (pointer[i])
-    {
-        free(pointer[i]);
-        i++;
-    }
-    free(pointer);
-}
 void ft_check_input(int ac, char **av)
 {
     long value;
     int i;
     char **pointer;
 
+    i = 0;
     if(ac == 2)
-    {
-        i = 0;
         pointer = ft_split(av[1], ' ');
-    }
     else
-    {
-        i = 0;
         pointer = ft_join_all_argument(av, ac);
         //pointer = av;
-    }
     while(pointer[i])
     {
         value = ft_atoi(pointer[i]);
@@ -89,3 +73,4 @@ void ft_check_input(int ac, char **av)
     }
     ft_free_split(pointer);
 }
+ 
