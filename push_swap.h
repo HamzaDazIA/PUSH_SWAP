@@ -40,5 +40,6 @@ t_stack	*ft_lstnew(int ontent);
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int	ft_lstsize(t_stack *lst);
-
+int is_already_sortd(t_stack *stack);
+void    sortd_element(t_stack **stack_a , t_stack **stack_b);
 #endif
