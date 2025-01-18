@@ -6,11 +6,11 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:34:39 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/13 03:58:40 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/18 16:57:13 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 long	ft_atoi(const char *str)
 {

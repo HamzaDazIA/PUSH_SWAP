@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 02:10:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/17 10:07:27 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/18 17:41:31 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void ft_print_error(char *str)
 {
     ft_putendl_fd(str, 1);
-    exit(1);
+    // exit(1);
 }
 
 static int ft_is_duplicate(long value, char **av, int i)
@@ -61,7 +61,7 @@ void ft_check_input(int ac, char **av)
         //pointer = av;
     while(pointer[i])
     {
-        value = ft_atoi(pointer[i]);
+        value = ft_atoi_2(pointer[i],pointer);
         printf("Checking value: %ld\n", value); // Debugging print
         if (ft_is_number(pointer[i]) == 0)
             ft_print_error("Error: Invalid number");
@@ -71,6 +71,7 @@ void ft_check_input(int ac, char **av)
             ft_print_error("Error: Value out of range");
         i++;
     }
+    
     ft_free_split(pointer);
 }
  

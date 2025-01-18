@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:50:29 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 10:55:37 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/18 16:47:59 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
-long	ft_atoi(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

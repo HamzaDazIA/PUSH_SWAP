@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/17 14:09:14 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/18 17:40:15 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void necessary_ft(t_stack **stack, char **av, int ac)
 
 int main(int argc, char **argv)
 {
-    //atexit(ll);
+    atexit(ll);
     if(argc > 1)
     {
         t_stack **stack_a;
