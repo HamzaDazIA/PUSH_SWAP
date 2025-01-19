@@ -15,7 +15,11 @@ typedef struct s_stack
     int cost_b;
     struct s_stack *next;
 } t_stack;
+//debagin part ;
+void print_stack(t_stack *stack, const char *stack_name);
 
+void print_stack_i(t_stack *stack, const char *stack_name);
+//.
 void ft_check_input(int ac, char **av);
 long	ft_atoi_2(const char *str, char **pontoir);
 long	ft_atoi(const char *str);
