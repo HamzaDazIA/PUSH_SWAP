@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:53:02 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/17 14:15:03 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/19 10:16:13 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,23 @@ int is_already_sortd(t_stack *stack)
 {
     while (stack && stack->next) {
         if (stack->value > stack->next->value)
-            return 0;  // Not sorted
+            return 0;
         stack = stack->next;
     }
-    return 1;  // Sorted
+    return 1;
+}
+void    position(t_stack    **stack)
+{
+    t_stack *head;
+    int     i;
+
+    i = 0;
+    head = *stack;
+    
+    while (head)
+    {
+        head->pos = i;
+        head = head->next;
+        i++;
+    }
 }
