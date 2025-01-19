@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/18 17:40:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/19 13:16:30 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void necessary_ft(t_stack **stack, char **av, int ac)
 
 int main(int argc, char **argv)
 {
-    atexit(ll);
+   // atexit(ll);
     if(argc > 1)
     {
         t_stack **stack_a;
@@ -82,7 +82,9 @@ int main(int argc, char **argv)
             sortd_element(stack_a, stack_b);
         }
         print_stack(*stack_a, "Stack A");
-        print_stack_i(*stack_a, "Stack A");
+        print_stack_i(*stack_a, "index Stack A");
+        print_stack(*stack_b, "Stack B");
+        print_stack_i(*stack_b, "index Stack B");
     }
 
     return (0);

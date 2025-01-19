@@ -44,4 +44,6 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int	ft_lstsize(t_stack *lst);
 int is_already_sortd(t_stack *stack);
 void    sortd_element(t_stack **stack_a , t_stack **stack_b);
+void    position(t_stack    **stack);
+void   push_numbers_to_stack_b(t_stack  **stack_a, t_stack **stack_b);
 #endif

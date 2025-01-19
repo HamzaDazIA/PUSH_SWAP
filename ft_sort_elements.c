@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/17 17:24:17 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/19 13:13:51 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ static void sort_three_numbers(t_stack **stack)
         sa(stack);
     }
 }
-void sort_more_numbe(t_stack **stack_a, t_stack **stack)
+void sort_more_numbe(t_stack **stack_a, t_stack **stack_b)
 {
+    push_numbers_to_stack_b(stack_a, stack_b);
 }
 
 void    sortd_element(t_stack **stack_a , t_stack **stack_b)
@@ -50,6 +51,6 @@ void    sortd_element(t_stack **stack_a , t_stack **stack_b)
     }
     else if (ft_lstsize(*stack_a) > 3)
     {
-        
+        sort_more_numbe(stack_a, stack_b);
     }
 }
