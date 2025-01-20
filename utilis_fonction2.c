@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:53:02 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/19 22:19:45 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/20 07:06:30 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,39 @@ void    position(t_stack    **stack)
         head = head->next;
         i++;
     }
+}
+int	target_pos(t_stack	**stack_a, int indix_b, int smallind, int target_pos)
+{
+	t_stack	*p_a;
+
+	p_a = *stack_a;
+	while(p_a)
+	{
+		if (p_a->index > indix_b && p_a->index < smallind)
+		{
+			target_pos =  p_a->pos;
+			smallind = p_a->index;
+		}
+		p_a = p_a->next;
+	}
+	if (smallind == INT_MAX)
+	{
+		p_a = *stack_a;
+		while ()
+	}
+}
+
+void	target_pos_and_pos(t_stack	**stack_a,	t_stack	**stack_b)
+{
+	int	target_pos;
+	t_stack	*p_b;
+	
+	p_b = *stack_b;
+	position(stack_a);
+	position(stack_b);
+	
+	while (p_b)
+	{
+		target_pos = 
+	}
 }
