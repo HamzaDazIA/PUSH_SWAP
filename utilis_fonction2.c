@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:53:02 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/20 07:06:30 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/20 08:13:22 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void    position(t_stack    **stack)
         i++;
     }
 }
-int	target_pos(t_stack	**stack_a, int indix_b, int smallind, int target_pos)
+int	target_poss(t_stack	**stack_a, int indix_b, int smallind, int target_pos)
 {
 	t_stack	*p_a;
 
@@ -53,8 +53,17 @@ int	target_pos(t_stack	**stack_a, int indix_b, int smallind, int target_pos)
 	if (smallind == INT_MAX)
 	{
 		p_a = *stack_a;
-		while ()
+		while (p_a)
+		{
+			if (p_a->index < smallind)
+			{
+				target_pos =  p_a->pos;
+				smallind = p_a->index;
+			}
+			p_a = p_a->next;
+		}
 	}
+	return (target_pos);
 }
 
 void	target_pos_and_pos(t_stack	**stack_a,	t_stack	**stack_b)
@@ -68,6 +77,8 @@ void	target_pos_and_pos(t_stack	**stack_a,	t_stack	**stack_b)
 	
 	while (p_b)
 	{
-		target_pos = 
+		target_pos = target_poss(stack_a, p_b->index, INT_MAX, target_pos);
+		p_b->target_pos = target_pos;
+		p_b = p_b->next;
 	}
 }
