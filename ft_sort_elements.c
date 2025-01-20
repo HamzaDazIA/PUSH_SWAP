@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/19 23:46:36 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/20 02:33:50 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void   push_numbers_to_stack_b(t_stack  **stack_a, t_stack **stack_b)
 	size = ft_lstsize(*stack_a);
 	hm_push = 0;
 	
-	while ( size > 6 && hm_push < size / 2)
+	while (size > 6 && hm_push < size / 2)
 	{
 		if((*stack_a)->index <= size / 2)
 		{
