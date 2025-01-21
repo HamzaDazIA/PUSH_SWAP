@@ -28,6 +28,7 @@
         "string_view": "c",
         "unordered_map": "c",
         "push_swap.h": "c",
-        "utility": "c"
+        "utility": "c",
+        "s": "cpp"
     }
 }

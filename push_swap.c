@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/20 08:04:01 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/21 09:08:26 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void print_stack_t(t_stack *stack, const char *stack_name)
     }
     printf("NULL\n");
 }
+//tal han 
+
 static void necessary_ft(t_stack **stack, char **av, int ac)
 {
     t_stack *new;
