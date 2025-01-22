@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:53:02 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/21 10:03:32 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/21 19:26:46 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,17 @@ int	target_poss(t_stack	**stack_a, int indix_b, int smallind, int target_pos)
 		}
 		p_a = p_a->next;
 	}
-	if (smallind == INT_MAX)
+	if (smallind != INT_MAX)
+		return (target_pos);
+	p_a = *stack_a;
+	while (p_a)
 	{
-		p_a = *stack_a;
-		while (p_a)
+		if (p_a->index < smallind)
 		{
-			if (p_a->index < smallind)
-			{
-				target_pos =  p_a->pos;
-				smallind = p_a->index;
-			}
-			p_a = p_a->next;
+			target_pos =  p_a->pos;
+			smallind = p_a->index;
 		}
+		p_a = p_a->next;
 	}
 	return (target_pos);
 }

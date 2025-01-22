@@ -51,5 +51,6 @@ void    sortd_element(t_stack **stack_a , t_stack **stack_b);
 void    position(t_stack    **stack);
 void   push_numbers_to_stack_b(t_stack  **stack_a, t_stack **stack_b);
 void	target_pos_and_pos(t_stack	**stack_a,	t_stack	**stack_b);
+void cost_element(t_stack **stack_a, t_stack    **stack_b);
 
 #endif
