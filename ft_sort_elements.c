@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/21 19:46:04 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/23 23:48:30 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void   push_numbers_to_stack_b(t_stack  **stack_a, t_stack **stack_b)
 {
 	int	size;
-	int hm_push; //how mutch push in stak b
+	int hm_push;
 
 	size = ft_lstsize(*stack_a);
 	hm_push = 0;
@@ -67,7 +67,7 @@ void sort_more_numbe(t_stack **stack_a, t_stack **stack_b)
     sort_three_numbers(stack_a);
     target_pos_and_pos(stack_a, stack_b);
     cost_element(stack_a, stack_b);
-    
+    calcul_cost_push(stack_a, stack_b);
 }
 
 void    sortd_element(t_stack **stack_a , t_stack **stack_b)

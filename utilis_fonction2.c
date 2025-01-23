@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:53:02 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/21 19:26:46 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/24 00:23:24 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,10 @@ void	target_pos_and_pos(t_stack	**stack_a,	t_stack	**stack_b)
 		p_b->target_pos = target_pos;
 		p_b = p_b->next;
 	}
+}
+int	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (nbr * -1);
+	return (nbr);
 }
