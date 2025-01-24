@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/21 09:08:26 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/24 06:41:15 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,11 @@ int main(int argc, char **argv)
         {
             sortd_element(stack_a, stack_b);
         }
-        print_stack(*stack_a, "Stack A");
-        print_stack_i(*stack_a, "index Stack A");
-        print_stack(*stack_b, "Stack B");
-        print_stack_i(*stack_b, "index Stack B");
-        print_stack_t(*stack_b, "target Stack B");
+        // print_stack(*stack_a, "Stack A");
+        // print_stack_i(*stack_a, "index Stack A");
+        // print_stack(*stack_b, "Stack B");
+        // print_stack_i(*stack_b, "index Stack B");
+        // print_stack_t(*stack_b, "target Stack B");
     }
 
     return (0);

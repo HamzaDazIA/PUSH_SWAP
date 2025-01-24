@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 04:39:00 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/24 06:51:05 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,18 @@ static void sort_three_numbers(t_stack **stack)
         rra(stack);
 }
 
+
 void sort_more_numbe(t_stack **stack_a, t_stack **stack_b)
 {
     push_numbers_to_stack_b(stack_a, stack_b);
     sort_three_numbers(stack_a);
-    target_pos_and_pos(stack_a, stack_b);
-    cost_element(stack_a, stack_b);
-    calcul_cost_push(stack_a, stack_b);
+    while(*stack_b)
+    {    
+        target_pos_and_pos(stack_a, stack_b);
+        cost_element(stack_a, stack_b);
+        calcul_cost_push(stack_a, stack_b);
+    }
+    if(is_already_sortd(*stack_a) == 0)
 }
 
 void    sortd_element(t_stack **stack_a , t_stack **stack_b)
