@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:28:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 00:41:21 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/24 04:48:02 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int     calculat_cost_b(int pos, int    size_stack)
 {
-    if(pos <= size_stack / 2)
+    if(pos < size_stack / 2)
         return (pos);
     else
         pos = pos - size_stack;
@@ -22,7 +22,7 @@ int     calculat_cost_b(int pos, int    size_stack)
 }
 int     calculat_cost_a(int target_pos, int    size_stack)
 {
-    if (target_pos <= size_stack / 2)
+    if (target_pos < size_stack / 2)
         return (target_pos);
     else
        return (target_pos - size_stack);
@@ -31,11 +31,11 @@ void cost_element(t_stack **stack_a, t_stack    **stack_b)
 {
     int size_a;
     int size_b;
-
+    t_stack *head_b;
     
     size_a = ft_lstsize(*stack_a);
-    size_a = ft_lstsize(*stack_b);
-    t_stack *head_b = *stack_b;
+    size_b = ft_lstsize(*stack_b);
+    head_b = *stack_b;
     while (head_b)
     {
         head_b->cost_b = calculat_cost_b(head_b->pos, size_b);
@@ -43,7 +43,7 @@ void cost_element(t_stack **stack_a, t_stack    **stack_b)
         head_b = head_b->next;
     }
 }
-void    calcul_cost_push(stack_a, stack_b)
+void    calcul_cost_push(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *head_b;
     int less_cost;
@@ -51,7 +51,7 @@ void    calcul_cost_push(stack_a, stack_b)
     int cost_b;
     
     less_cost = INT_MAX;
-    head_b = stack_b;
+    head_b = *stack_b;
 
     while (head_b)
     {
@@ -63,5 +63,5 @@ void    calcul_cost_push(stack_a, stack_b)
         }
         head_b = head_b->next;
     }
-    
+    move_element(cost_a, cost_b, stack_a, stack_b);
 }
