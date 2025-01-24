@@ -6,12 +6,51 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 06:51:05 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/24 08:25:41 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int find_smallest_position(t_stack **stack_a)
+{
+    int smallest_pos = 0;
+    int smallest_index = (*stack_a)->index;
+    t_stack *current = *stack_a;
+    int i = 0;
+
+    while (current)
+    {
+        if (current->index < smallest_index)
+        {
+            smallest_index = current->index;
+            smallest_pos = i;
+        }
+        current = current->next;
+        i++;
+    }
+    return smallest_pos;
+}
+
+void rotate_stack_a(t_stack **stack_a)
+{
+    int smallest_pos = find_smallest_position(stack_a);
+    int stack_size = ft_lstsize(*stack_a);
+    int middle_pos = stack_size / 2;
+
+    if (smallest_pos <= middle_pos)
+    {
+        int rotations = smallest_pos;
+        while (rotations-- > 0)
+            ra(stack_a);
+    }
+    else
+    {
+        int rotations = stack_size - smallest_pos;
+        while (rotations-- > 0)
+            rra(stack_a);
+    }
+}
 void   push_numbers_to_stack_b(t_stack  **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -73,6 +112,7 @@ void sort_more_numbe(t_stack **stack_a, t_stack **stack_b)
         calcul_cost_push(stack_a, stack_b);
     }
     if(is_already_sortd(*stack_a) == 0)
+        rotate_stack_a(stack_a);
 }
 
 void    sortd_element(t_stack **stack_a , t_stack **stack_b)

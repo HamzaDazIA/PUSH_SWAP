@@ -55,4 +55,5 @@ void cost_element(t_stack **stack_a, t_stack    **stack_b);
 int	ft_abs(int nbr);
 void    move_element(int    cost_a, int    cost_b, t_stack **stack_a, t_stack   **stack_b);
 void    calcul_cost_push(t_stack **stack_a, t_stack **stack_b);
+void rotate_stack_a(t_stack **stack_a);
 #endif
