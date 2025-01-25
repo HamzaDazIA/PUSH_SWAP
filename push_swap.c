@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 06:41:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/25 04:07:01 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,21 @@
 void ll(){
     system("leaks a.out");
 }
-// Part debagin code 
-void print_stack(t_stack *stack, const char *stack_name)
+
+void	free_stack(t_stack **stack)
 {
-    printf("%s: ", stack_name);
-    while (stack)
-    {
-        printf("%d -> ", stack->value);
-        stack = stack->next;
-    }
-    printf("NULL\n");
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }
-void print_stack_i(t_stack *stack, const char *stack_name)
-{
-    printf("%s: ", stack_name);
-    while (stack)
-    {
-        printf("%d -> ", stack->index);
-        stack = stack->next;
-    }
-    printf("NULL\n");
-}
-void print_stack_t(t_stack *stack, const char *stack_name)
-{
-    printf("%s: ", stack_name);
-    while (stack)
-    {
-        printf("%d -> ", stack->target_pos);
-        stack = stack->next;
-    }
-    printf("NULL\n");
-}
-//tal han 
 
 static void necessary_ft(t_stack **stack, char **av, int ac)
 {
@@ -67,13 +50,12 @@ static void necessary_ft(t_stack **stack, char **av, int ac)
         ft_lstadd_back(stack, new);
         i++;
     }
-    index_stack(stack);
+    index_stack(stack); 
     ft_free_split(pointer);
 }
 
 int main(int argc, char **argv)
 {
-   // atexit(ll);
     if(argc > 1)
     {
         t_stack **stack_a;
@@ -85,20 +67,14 @@ int main(int argc, char **argv)
         *stack_a = NULL;
         *stack_b = NULL;
         necessary_ft(stack_a, argv, argc);
-        if (is_already_sortd(*stack_a) == 1)
-        {
-            printf("is already sortd");
-        }
-        else
+        if (is_already_sortd(*stack_a) == 0)
         {
             sortd_element(stack_a, stack_b);
         }
-        // print_stack(*stack_a, "Stack A");
-        // print_stack_i(*stack_a, "index Stack A");
-        // print_stack(*stack_b, "Stack B");
-        // print_stack_i(*stack_b, "index Stack B");
-        // print_stack_t(*stack_b, "target Stack B");
+        free_stack(stack_a);
+        free_stack(stack_b);
+        free (stack_a);
+        free (stack_b);
     }
-
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:06:09 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 17:22:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/25 02:46:56 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void    rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
-	ft_putendl_fd("rrb",1);
+	ft_putendl_fd("rrr",1);
     
 }

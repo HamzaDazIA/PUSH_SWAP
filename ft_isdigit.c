@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 03:37:22 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/14 18:02:34 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/25 04:03:04 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/25 04:03:08 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_isdigit(int c)
 {
-	unsigned int	i;
-
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+	if (c >= '0' && c <= '9')
 	{
-		f(i, &s[i]);
-		i++;
+		return (1);
 	}
+	return (0);
 }

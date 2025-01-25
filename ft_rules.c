@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 08:04:33 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/16 09:34:29 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/25 01:55:01 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int sb(t_stack  **stack)
     if (ft_swap(stack) == 0)
         return (0);
     else
-        ft_putendl_fd("sa",1);
+        ft_putendl_fd("sb ",1);
     return (1);
 }
 int ss(t_stack **stack_a, t_stack **stack_b)

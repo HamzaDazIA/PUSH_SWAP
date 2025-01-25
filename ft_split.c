@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 04:23:37 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/14 18:31:30 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/25 03:53:55 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/25 03:53:56 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+
+#include "push_swap.h"
 
 static char	**free_array(char **ptr, int i)
 {

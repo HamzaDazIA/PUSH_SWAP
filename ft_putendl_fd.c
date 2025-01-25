@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:01:16 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/13 13:45:06 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/25 04:01:40 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/25 04:01:42 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+#include "push_swap.h"
+
+static void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*p_s;
-	size_t			i;
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
+}
+static void	ft_putstr_fd(char *s, int fd)
+{
+	unsigned int	i;
 
-	p_s = (unsigned char *)s;
+	if (!s || fd < 0)
+		return ;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		if (p_s[i] == (unsigned char)c)
-			return (&p_s[i]);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	return (NULL);
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s || fd < 0)
+		return ;
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

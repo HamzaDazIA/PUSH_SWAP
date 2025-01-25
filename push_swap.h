@@ -1,9 +1,9 @@
 #ifndef PUSH_SWAP
 #define PUSH_SWAP
 # include <unistd.h>
-#include "libft-42/libft.h"
 #include <limits.h>
 #include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {
@@ -15,11 +15,7 @@ typedef struct s_stack
     int cost_b;
     struct s_stack *next;
 } t_stack;
-//debagin part ;
-void print_stack(t_stack *stack, const char *stack_name);
 
-void print_stack_i(t_stack *stack, const char *stack_name);
-//.
 void ft_check_input(int ac, char **av);
 long	ft_atoi_2(const char *str, char **pontoir);
 long	ft_atoi(const char *str);
@@ -56,4 +52,12 @@ int	ft_abs(int nbr);
 void    move_element(int    cost_a, int    cost_b, t_stack **stack_a, t_stack   **stack_b);
 void    calcul_cost_push(t_stack **stack_a, t_stack **stack_b);
 void rotate_stack_a(t_stack **stack_a);
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *str);
+void	ft_putendl_fd(char *s, int fd);
+int	ft_isdigit(int c);
+
 #endif

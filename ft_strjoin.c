@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 19:45:49 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/12 23:10:24 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/25 03:56:37 by hdazia            #+#    #+#             */
+/*   Updated: 2025/01/25 03:57:16 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 static void	copy_strings(char *dest, const char *src1, const char *src2)
 {

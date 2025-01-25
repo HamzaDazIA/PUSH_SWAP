@@ -29,6 +29,7 @@
         "unordered_map": "c",
         "push_swap.h": "c",
         "utility": "c",
-        "s": "cpp"
+        "s": "cpp",
+        "initializer_list": "c"
     }
 }
