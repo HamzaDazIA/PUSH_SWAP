@@ -64,6 +64,8 @@ int main(int argc, char **argv)
         ft_check_input(argc, argv);
         stack_a = malloc(sizeof(t_stack *));
         stack_b = malloc(sizeof(t_stack *));
+        if (check_malloc == -1)
+            return (free(stack_a), free(stack_b), -1);
         *stack_a = NULL;
         *stack_b = NULL;
         necessary_ft(stack_a, argv, argc);
