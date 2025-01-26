@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-static void ft_print_error(char *str)
+void ft_print_error(char *str)
 {
     ft_putendl_fd(str, 1);
     exit(1);
 }
 
-static int ft_is_duplicate(long value, char **av, int i)
+int ft_is_duplicate(long value, char **av, int i)
 {
     i++;
     while (av[i])
@@ -30,7 +30,7 @@ static int ft_is_duplicate(long value, char **av, int i)
     return (1);
 }
 
-static int ft_is_number(char *str)
+int ft_is_number(char *str)
 {
     int i = 0;
 
@@ -83,21 +83,15 @@ void ft_check_input(int ac, char **av)
     if (ac == 2)
     {
         pointer = ft_split(av[1], ' ');
-        if (check_return_split(pointer) == -1)
-            return (-1);
+        if (check_return_splite(pointer) == -1)
+            exit(-1);
     }
     else
-        pointer = ft_join_all_argument(av, ac, i);
-    while (pointer[i])
     {
-        value = ft_atoi_2(pointer[i], pointer);
-        if (ft_is_number(pointer[i]) == 0)
-            ft_print_error("Error: Invalid number");
-        if (ft_is_duplicate(value, pointer, i) == 0)
-            ft_print_error("Error: Duplicate value");
-        if (value > INT_MAX || value < INT_MIN)
-            ft_print_error("Error: Value out of range");
-        i++;
+        pointer = ft_join_all_argument(av, ac, i);
+        if (pointer == NULL)
+            exit(-1);
     }
+    check_element_perror(pointer);
     ft_free_split(pointer);
 }

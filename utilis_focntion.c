@@ -19,27 +19,30 @@ char **ft_join_all_argument(char **argv, int argc, int i)
 	char *save_address;
 	
 	pointer = ft_strdup("");
-	if (check_return_split(pointer) == -1)
-		return (-1);
+	if (check_return_splite(pointer) == -1)
+		return (NULL);
 	i = 0;
 	while (++i < argc)
 	{
-		if (i > 1)
-		{
-			save_address = pointer;
-			pointer = ft_strjoin(pointer, " ");
-			if (check_return_split(pointer) == -1)
-				return (free (save_address), -1);
-			free(save_address);
-		}
-		save_address = pointer;
-		pointer = ft_strjoin(pointer, argv[i]);
-		if (check_return_split(pointer) == -1)
-			return (free (pointer), -1);
-		free(save_address);
+        save_address = pointer;
+        if (i > 1)
+            pointer = ft_strjoin(pointer, " ");
+        if (check_return_splite(pointer) == -1)
+            return (free(save_address), NULL);
+        free(save_address);
+        save_address = pointer;
+        pointer = ft_strjoin(pointer, argv[i]);
+        if (check_return_splite(pointer) == -1)
+            return (free(save_address), NULL);
+        free(save_address);
 	}
-	return (s_p = ft_split(pointer, ' '), free(pointer), s_p);
+    s_p = ft_split(pointer, ' ');
+    free(pointer);
+    if (check_return_splite(s_p) == -1)
+        return (NULL);
+    return (s_p);
 }
+
 void ft_free_split(char **pointer)
 {
     int i = 0;
@@ -107,6 +110,8 @@ void	index_stack(t_stack **stack)
 	
 	size = ft_lstsize(*stack);
 	arry = malloc(size*sizeof(int));
+	if (check_return_splite(arry) == -1)
+        return;
 	head = *stack;
 	i = 0;
 	while (i < size)
