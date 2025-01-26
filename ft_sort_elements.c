@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:14:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 16:26:07 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 14:33:12 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ static void sort_three_numbers(t_stack **stack)
     else if (first < second && second > third && first > third)
         rra(stack);
 }
-
 
 void sort_more_numbe(t_stack **stack_a, t_stack **stack_b)
 {

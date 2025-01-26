@@ -6,37 +6,39 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/17 10:55:06 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 14:36:34 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //maybe timeout here :]
-char **ft_join_all_argument(char **argv, int argc)
+char **ft_join_all_argument(char **argv, int argc, int i)
 {
-	int i;
 	char *pointer;
-	char **secand_pointer;
+	char **s_p;
 	char *save_address;
 	
 	pointer = ft_strdup("");
-	i = 1;
-	while (i < argc)
+	if (check_return_split(pointer) == -1)
+		return (-1);
+	i = 0;
+	while (++i < argc)
 	{
 		if (i > 1)
 		{
 			save_address = pointer;
 			pointer = ft_strjoin(pointer, " ");
+			if (check_return_split(pointer) == -1)
+				return (free (save_address), -1);
 			free(save_address);
 		}
 		save_address = pointer;
 		pointer = ft_strjoin(pointer, argv[i]);
+		if (check_return_split(pointer) == -1)
+			return (free (pointer), -1);
 		free(save_address);
-		i++;		
 	}
-	secand_pointer = ft_split(pointer, ' ');
-	free(pointer);
-	return (secand_pointer);
+	return (s_p = ft_split(pointer, ' '), free(pointer), s_p);
 }
 void ft_free_split(char **pointer)
 {

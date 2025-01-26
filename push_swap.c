@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/25 04:07:01 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 14:40:18 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void necessary_ft(t_stack **stack, char **av, int ac)
     if(ac == 2)
         pointer = ft_split(av[1], ' ');
     else
-        pointer = ft_join_all_argument(av, ac);
+        pointer = ft_join_all_argument(av, ac, i);
     while(pointer[i])
     {
         new = ft_lstnew(ft_atoi(pointer[i]));
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
         ft_check_input(argc, argv);
         stack_a = malloc(sizeof(t_stack *));
         stack_b = malloc(sizeof(t_stack *));
-        if (check_malloc == -1)
+        if (check_malloc(stack_a, stack_b) == -1)
             return (free(stack_a), free(stack_b), -1);
         *stack_a = NULL;
         *stack_b = NULL;

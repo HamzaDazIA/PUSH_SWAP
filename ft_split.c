@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 03:53:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/25 03:53:56 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 12:39:23 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	**free_array(char **ptr, int i)
 		free(ptr[i]);
 	}
 	free(ptr);
-	return (0);
+	return (NULL);
 }
 
 static char	*ft_print_strings(char *str, const char *s, int j, int word_len)
