@@ -6,48 +6,53 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 08:27:19 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 16:24:01 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/27 09:37:14 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int find_smallest_position(t_stack **stack_a)
-// {
-//     int smallest_pos = 0;
-//     int smallest_index = (*stack_a)->index;
-//     t_stack *current = *stack_a;
-//     int i = 0;
+static char	*safe_strjoin(char *str, char *append)
+{
+	char	*new_str;
 
-//     while (current)
-//     {
-//         if (current->index < smallest_index)
-//         {
-//             smallest_index = current->index;
-//             smallest_pos = i;
-//         }
-//         current = current->next;
-//         i++;
-//     }
-//     return smallest_pos;
-// }
+	new_str = ft_strjoin(str, append);
+	free(str);
+	if (!new_str)
+		return (NULL);
+	return (new_str);
+}
 
-// void rotate_stack_a(t_stack **stack_a)
-// {
-//     int smallest_pos = find_smallest_position(stack_a);
-//     int stack_size = ft_lstsize(*stack_a);
-//     int middle_pos = stack_size / 2;
+static char	*build_joined_str(int argc, char **argv)
+{
+	char	*joined;
+	int		i;
 
-//     if (smallest_pos <= middle_pos)
-//     {
-//         int rotations = smallest_pos;
-//         while (rotations-- > 0)
-//             ra(stack_a);
-//     }
-//     else
-//     {
-//         int rotations = stack_size - smallest_pos;
-//         while (rotations-- > 0)
-//             rra(stack_a);
-//     }
-// }
+	joined = ft_strdup("");
+	if (!joined)
+		return (NULL);
+	i = 0;
+	while (++i < argc)
+	{
+		if (i > 1 && !(joined = safe_strjoin(joined, " ")))
+			return (NULL);
+		if (!(joined = safe_strjoin(joined, argv[i])))
+			return (NULL);
+	}
+	return (joined);
+}
+
+char	**ft_join_all_argument(char **argv, int argc)
+{
+	char	*joined_str;
+	char	**result;
+
+	joined_str = build_joined_str(argc, argv);
+	if (!joined_str)
+		return (NULL);
+	result = ft_split(joined_str, ' ');
+	free(joined_str);
+	if (!result)
+		return (NULL);
+	return (result);
+}

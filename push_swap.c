@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/26 20:11:02 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/27 09:37:41 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void necessary_ft(t_stack **stack, char **av, int ac)
     if(ac == 2)
         pointer = ft_split(av[1], ' ');
     else
-        pointer = ft_join_all_argument(av, ac, i);
+        pointer = ft_join_all_argument(av, ac);
     while(pointer[i])
     {
         new = ft_lstnew(ft_atoi(pointer[i]));

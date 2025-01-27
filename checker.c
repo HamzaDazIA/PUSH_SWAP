@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 02:10:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/26 19:46:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/27 09:37:27 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,11 @@ void ft_check_input(int ac, char **av)
     i = 0;
     ft_check_empty_input(ac, av);
     if (ac == 2)
-    {
         pointer = ft_split(av[1], ' ');
-        // if (check_return_split(pointer) == -1)
-        //     return (-1);
-    }
     else
-        pointer = ft_join_all_argument(av, ac, i);
+        pointer = ft_join_all_argument(av, ac);
+    if (pointer == NULL)
+         exit(-1);
     while (pointer[i])
     {
         value = ft_atoi_2(pointer[i], pointer);

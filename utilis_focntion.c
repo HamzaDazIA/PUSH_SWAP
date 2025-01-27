@@ -6,47 +6,13 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/26 19:55:02 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/27 09:36:54 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //maybe timeout here :]
-char **ft_join_all_argument(char **argv, int argc, int i)
-{
-    char *pointer;
-    char **s_p;
-    char *new_str;
 
-    // Initialize `pointer` with an empty string
-    pointer = ft_strdup("");
-    if (!pointer)
-        return (NULL);
-
-    i = 0;
-    while (++i < argc)
-    {
-        if (i > 1)
-        {
-            new_str = ft_strjoin(pointer, " ");
-            if (!new_str)
-                return (free(pointer), NULL);
-            free(pointer);
-            pointer = new_str;
-        }
-        new_str = ft_strjoin(pointer, argv[i]);
-        if (!new_str)
-            return (free(pointer), NULL);
-        free(pointer);
-        pointer = new_str;
-    }
-    s_p = ft_split(pointer, ' ');
-    free(pointer);
-    if (!s_p)
-        return (NULL);
-
-    return (s_p);
-}
 void ft_free_split(char **pointer)
 {
     int i = 0;
