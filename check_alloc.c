@@ -10,10 +10,10 @@ int check_malloc(t_stack **stack_a, t_stack **stack_b)
         return (1);                         
 }
 
-int check_return_splite(void *ptr)
-{
-    if (ptr == NULL)
-        return -1;
-    else
-        return (0);
-}
+// int check_return_malloc(char *str)
+// {
+//     if (str == NULL)
+//         return -1;
+//     else
+//         return (0);
+// }

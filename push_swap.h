@@ -5,6 +5,8 @@
 #include <stdio.h>
 # include <stdlib.h>
 
+#define malloc(x)  NULL;
+
 typedef struct s_stack
 {
     int value;
@@ -17,9 +19,6 @@ typedef struct s_stack
 } t_stack;
 
 void ft_check_input(int ac, char **av);
-int ft_is_number(char *str);
-int ft_is_duplicate(long value, char **av, int i);
-void ft_print_error(char *str);
 long	ft_atoi_2(const char *str, char **pontoir);
 long	ft_atoi(const char *str);
 char **ft_join_all_argument(char **argv, int argc, int i);
@@ -63,7 +62,5 @@ size_t	ft_strlen(const char *str);
 void	ft_putendl_fd(char *s, int fd);
 int	ft_isdigit(int c);
 int check_malloc(t_stack **stack_a, t_stack **stack_b);
-int check_return_splite(void *ptr);
-void    check_element_perror(char **poniter);
-
+int check_return_malloc(char **str);
 #endif

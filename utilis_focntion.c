@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/26 14:36:34 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 19:55:02 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,39 @@
 //maybe timeout here :]
 char **ft_join_all_argument(char **argv, int argc, int i)
 {
-	char *pointer;
-	char **s_p;
-	char *save_address;
-	
-	pointer = ft_strdup("");
-	if (check_return_splite(pointer) == -1)
-		return (NULL);
-	i = 0;
-	while (++i < argc)
-	{
-        save_address = pointer;
+    char *pointer;
+    char **s_p;
+    char *new_str;
+
+    // Initialize `pointer` with an empty string
+    pointer = ft_strdup("");
+    if (!pointer)
+        return (NULL);
+
+    i = 0;
+    while (++i < argc)
+    {
         if (i > 1)
-            pointer = ft_strjoin(pointer, " ");
-        if (check_return_splite(pointer) == -1)
-            return (free(save_address), NULL);
-        free(save_address);
-        save_address = pointer;
-        pointer = ft_strjoin(pointer, argv[i]);
-        if (check_return_splite(pointer) == -1)
-            return (free(save_address), NULL);
-        free(save_address);
-	}
+        {
+            new_str = ft_strjoin(pointer, " ");
+            if (!new_str)
+                return (free(pointer), NULL);
+            free(pointer);
+            pointer = new_str;
+        }
+        new_str = ft_strjoin(pointer, argv[i]);
+        if (!new_str)
+            return (free(pointer), NULL);
+        free(pointer);
+        pointer = new_str;
+    }
     s_p = ft_split(pointer, ' ');
     free(pointer);
-    if (check_return_splite(s_p) == -1)
+    if (!s_p)
         return (NULL);
+
     return (s_p);
 }
-
 void ft_free_split(char **pointer)
 {
     int i = 0;
@@ -110,8 +114,6 @@ void	index_stack(t_stack **stack)
 	
 	size = ft_lstsize(*stack);
 	arry = malloc(size*sizeof(int));
-	if (check_return_splite(arry) == -1)
-        return;
 	head = *stack;
 	i = 0;
 	while (i < size)

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/26 14:40:18 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/26 20:11:02 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,11 @@ int main(int argc, char **argv)
 
         ft_check_input(argc, argv);
         stack_a = malloc(sizeof(t_stack *));
+        if (stack_a == NULL)
+            return(1);
         stack_b = malloc(sizeof(t_stack *));
-        if (check_malloc(stack_a, stack_b) == -1)
-            return (free(stack_a), free(stack_b), -1);
+        if (stack_b == NULL)
+            return(1);
         *stack_a = NULL;
         *stack_b = NULL;
         necessary_ft(stack_a, argv, argc);

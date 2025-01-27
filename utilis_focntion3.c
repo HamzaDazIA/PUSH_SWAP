@@ -12,20 +12,42 @@
 
 #include "push_swap.h"
 
-void    check_element_perror(char **p)
-{
-    long value;
-    int i;
+// int find_smallest_position(t_stack **stack_a)
+// {
+//     int smallest_pos = 0;
+//     int smallest_index = (*stack_a)->index;
+//     t_stack *current = *stack_a;
+//     int i = 0;
 
-    while (p[i])
-    {
-        value = ft_atoi_2(p[i], p);
-        if (ft_is_number(p[i]) == 0)
-            ft_print_error("Error: Invalid number");
-        if (ft_is_duplicate(value, p, i) == 0)
-            ft_print_error("Error: Duplicate value");
-        if (value > INT_MAX || value < INT_MIN)
-            ft_print_error("Error: Value out of range");
-        i++;
-    }
-}
+//     while (current)
+//     {
+//         if (current->index < smallest_index)
+//         {
+//             smallest_index = current->index;
+//             smallest_pos = i;
+//         }
+//         current = current->next;
+//         i++;
+//     }
+//     return smallest_pos;
+// }
+
+// void rotate_stack_a(t_stack **stack_a)
+// {
+//     int smallest_pos = find_smallest_position(stack_a);
+//     int stack_size = ft_lstsize(*stack_a);
+//     int middle_pos = stack_size / 2;
+
+//     if (smallest_pos <= middle_pos)
+//     {
+//         int rotations = smallest_pos;
+//         while (rotations-- > 0)
+//             ra(stack_a);
+//     }
+//     else
+//     {
+//         int rotations = stack_size - smallest_pos;
+//         while (rotations-- > 0)
+//             rra(stack_a);
+//     }
+// }
