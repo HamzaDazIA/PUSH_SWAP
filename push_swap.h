@@ -5,7 +5,7 @@
 #include <stdio.h>
 # include <stdlib.h>
 
-//#define malloc(x)  NULL;
+// #define malloc(x)  NULL;
 
 typedef struct s_stack
 {
@@ -18,7 +18,7 @@ typedef struct s_stack
     struct s_stack *next;
 } t_stack;
 
-void ft_check_input(int ac, char **av);
+char **ft_check_input(int ac, char **av);
 long	ft_atoi_2(const char *str, char **pontoir);
 long	ft_atoi(const char *str);
 char	**ft_join_all_argument(char **argv, int argc);

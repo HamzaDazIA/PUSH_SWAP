@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/27 09:36:54 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/27 15:56:42 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,71 +24,33 @@ void ft_free_split(char **pointer)
     }
     free(pointer);
 }
-
-static void sort_arry(int size, int *arry)
-{
-	int j;
-	int	k;
-	int tmp;
-
-	j = 0;
-	while (j < size - 1)
-	{
-		k = j + 1;
-		while(k < size)
-		{
-			if (arry[j] > arry[k])
-			{
-				tmp = arry[k];
-				arry[k] = arry[j];
-				arry[j] = tmp;
-			}
-			k++;	
-		}
-		j++;
-	}
-}
-
-
-static void assign_indices(t_stack **stack, int size, int *arry)
-{
-	int i;
-	t_stack	*head;
-
-	head = *stack;
-	while(head)
-	{
-		i = -1;
-		while (i++ < size)
-		{
-			if (head->value == arry[i])
-			{
-				head->index = i + 1;
-				break;
-			}
-		}
-		head = head ->next;
-	}
-}
-
-void	index_stack(t_stack **stack)
+static	int find_indix(t_stack **stack, int value)
 {
 	t_stack	*head;
-	int *arry;
 	int	i;
-	int size;
-	
-	size = ft_lstsize(*stack);
-	arry = malloc(size*sizeof(int));
-	head = *stack;
+
 	i = 0;
-	while (i < size)
+	head = *stack;
+	while (head)
 	{
-		arry[i++] = head->value;
+		if (head->value < value)
+			i++;
 		head = head->next;
 	}
-	sort_arry(size, arry);
-	assign_indices(stack, size, arry);
+	return(i);
+}
+void	index_stack(t_stack **stack_a)
+{
+	t_stack	*head;
+	int	index;
 	
-	free (arry);	
+	head = *stack_a;
+
+	while (head)
+	{
+		index = find_indix(stack_a, head->value);
+		head->index = index;
+		head  = head->next;
+	}
+	
 }
