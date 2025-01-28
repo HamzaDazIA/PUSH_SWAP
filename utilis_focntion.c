@@ -6,12 +6,11 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:10 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/27 15:56:42 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/28 08:02:12 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//maybe timeout here :]
 
 void ft_free_split(char **pointer)
 {
@@ -52,5 +51,4 @@ void	index_stack(t_stack **stack_a)
 		head->index = index;
 		head  = head->next;
 	}
-	
 }

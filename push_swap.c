@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/27 15:15:06 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/28 08:13:32 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ static void necessary_ft(t_stack **stack, char **av, int ac, char **pointer)
     while(pointer[i])
     {
         new = ft_lstnew(ft_atoi(pointer[i]));
+        if (new == NULL)
+        {
+            ft_free_split(pointer);
+            exit(-1);
+        }
         ft_lstadd_back(stack, new);
         i++;
     }
@@ -58,7 +63,7 @@ int main(int argc, char **argv)
         t_stack **stack_b;
         char **pointer;
         
-        pointer = ft_check_input(argc, argv); // no leaks 
+        pointer = ft_check_input(argc, argv); 
         stack_a = malloc(sizeof(t_stack *));
         if (stack_a == NULL)
             return(ft_free_split(pointer), 1);
