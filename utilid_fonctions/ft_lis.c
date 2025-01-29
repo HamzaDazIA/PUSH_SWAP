@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:51:11 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/29 06:30:12 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/29 06:48:02 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,14 @@ int	ft_lstsize(t_stack *lst)
 		i++;
 	}
 	return (i);
+}
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
+{
+	if (!lst || !new)
+		return ;
+	if (new != NULL)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

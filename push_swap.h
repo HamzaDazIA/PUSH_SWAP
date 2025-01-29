@@ -40,6 +40,7 @@ int sb(t_stack  **stack);
 int ss(t_stack **stack_a, t_stack **stack_b);
 void	index_stack(t_stack **stack);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew(int ontent);
 t_stack	*ft_lstlast(t_stack *lst);
 int	ft_lstsize(t_stack *lst);
