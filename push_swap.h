@@ -60,6 +60,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
 void	ft_putendl_fd(char *s, int fd);
 int	ft_isdigit(int c);
-int check_malloc(t_stack **stack_a, t_stack **stack_b);
-int check_return_malloc(char **str);
+
 #endif

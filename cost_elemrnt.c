@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:28:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/24 04:48:02 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/28 08:16:03 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int     calculat_cost_b(int pos, int    size_stack)
         pos = pos - size_stack;
     return (pos);
 }
+
 int     calculat_cost_a(int target_pos, int    size_stack)
 {
     if (target_pos < size_stack / 2)
@@ -27,6 +28,7 @@ int     calculat_cost_a(int target_pos, int    size_stack)
     else
        return (target_pos - size_stack);
 }
+
 void cost_element(t_stack **stack_a, t_stack    **stack_b)
 {
     int size_a;
@@ -43,6 +45,7 @@ void cost_element(t_stack **stack_a, t_stack    **stack_b)
         head_b = head_b->next;
     }
 }
+
 void    calcul_cost_push(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *head_b;

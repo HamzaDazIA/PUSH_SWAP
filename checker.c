@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 02:10:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/27 11:57:56 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/28 08:15:46 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void ft_print_error(char *str)
 	ft_putendl_fd(str, 1);
 	exit(-1);
 }
+
 static void ft_print_error_free(char *str, char **pointer)
 {
 	ft_free_split(pointer);
