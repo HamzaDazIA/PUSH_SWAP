@@ -6,10 +6,9 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 04:01:40 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/29 06:29:58 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/30 22:28:20 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../push_swap.h"
 
@@ -19,6 +18,7 @@ static void	ft_putchar_fd(char c, int fd)
 		return ;
 	write(fd, &c, 1);
 }
+
 static void	ft_putstr_fd(char *s, int fd)
 {
 	unsigned int	i;

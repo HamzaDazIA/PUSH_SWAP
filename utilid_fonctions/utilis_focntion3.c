@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 08:27:19 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/29 06:25:50 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/30 22:09:23 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,14 @@ static char	*build_joined_str(int argc, char **argv)
 	i = 0;
 	while (++i < argc)
 	{
-		if (i > 1 && !(joined = safe_strjoin(joined, " ")))
-			return (NULL);
-		if (!(joined = safe_strjoin(joined, argv[i])))
+		if (i > 1)
+		{
+			joined = safe_strjoin(joined, " ");
+			if (!joined)
+				return (NULL);
+		}
+		joined = safe_strjoin(joined, argv[i]);
+		if (!joined)
 			return (NULL);
 	}
 	return (joined);

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:07:39 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/29 06:28:56 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/30 22:31:04 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ static void	ft_perror_free(char **pointer)
 	ft_free_split(pointer);
 	exit(2);
 }
+
 long	ft_atoi_2(const char *str, char **pointer)
 {
-	int			sign;
-	long		rs;
+	int		sign;
+	long	rs;
 
 	sign = 1;
 	rs = 0;
-
 	while (*str != '\0' && ((*str >= 9 && *str <= 13) || (*str == 32)))
 		str++;
-	
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
