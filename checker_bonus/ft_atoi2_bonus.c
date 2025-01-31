@@ -6,16 +6,16 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:07:39 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 12:05:00 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:24:08 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 static void	ft_perror_free(char **pointer)
 {
-	ft_putendl_fd("Error", 1);
-	ft_free_split(pointer);
+	ft_putendl_fd_bonus("Error", 1);
+	free_split(pointer);
 	exit(2);
 }
 

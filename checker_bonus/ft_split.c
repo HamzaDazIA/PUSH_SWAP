@@ -6,11 +6,11 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 03:53:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 12:02:51 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 12:53:46 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 static char	**free_array(char **ptr, int i)
 {

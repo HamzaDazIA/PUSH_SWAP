@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 12:02:22 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:12:23 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ static void	put_elemen_stack(t_stack **stack, char **pointer)
 	i = 0;
 	while (pointer[i])
 	{
-		new = ft_lstnew(ft_atoi(pointer[i]));
+		new = ft_lstnew_bonus(ft_atoi_bonus(pointer[i]));
 		if (new == NULL)
 		{
 			free_split(pointer);
 			exit(-1);
 		}
-		ft_lstadd_back(stack, new);
+		ft_lstadd_back_bonus(stack, new);
 		i++;
 	}
 	free_split(pointer);

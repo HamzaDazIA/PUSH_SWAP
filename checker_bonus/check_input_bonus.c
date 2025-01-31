@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 06:53:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 12:14:29 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:23:01 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_print_error_free(char *str, char **pointer)
 {
 	free_split(pointer);
-	ft_putendl_fd(str, 1);
+	ft_putendl_fd_bonus(str, 1);
 	exit(-1);
 }
 
@@ -86,7 +86,7 @@ char	**ft_check_input_bonus(int ac, char **av)
 	if (ac == 2)
 		pointer = ft_split_bouns(av[1], ' ');
 	else
-		pointer = ft_join_all_argument(av, ac);
+		pointer = ft_join_all_argument_bonus(av, ac);
 	if (pointer == NULL)
 		exit(-1);
 	while (pointer[i])
