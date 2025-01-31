@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 08:27:19 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/30 22:09:23 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 08:02:37 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,34 @@ char	**ft_join_all_argument(char **argv, int argc)
 	if (!result)
 		return (NULL);
 	return (result);
+}
+
+void	ft_print_error(char *str)
+{
+	ft_putendl_fd(str, 1);
+	exit(-1);
+}
+
+void	rotate_stack_a(t_stack **stack_a)
+{
+	int	smallest_pos;
+	int	stack_size;
+	int	middle_pos;
+	int	rotations;
+
+	smallest_pos = find_smallest_position(stack_a);
+	stack_size = ft_lstsize(*stack_a);
+	middle_pos = stack_size / 2;
+	if (smallest_pos <= middle_pos)
+	{
+		rotations = smallest_pos;
+		while (rotations-- > 0)
+			ra(stack_a);
+	}
+	else
+	{
+		rotations = stack_size - smallest_pos;
+		while (rotations-- > 0)
+			rra(stack_a);
+	}
 }

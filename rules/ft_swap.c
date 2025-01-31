@@ -6,24 +6,23 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:57:12 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/29 06:26:43 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 06:23:33 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_swap(t_stack **stack)
+int	ft_swap(t_stack **stack)
 {
-    t_stack *first;
-    t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
-    if (ft_lstsize(*stack) < 2)
-        return (0);
-    first = *stack;
-    second = first->next;
-    
-    first->next = second->next;
-    second->next = first;
-    *stack = second;
-    return (1);
+	if (ft_lstsize(*stack) < 2)
+		return (0);
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
+	return (1);
 }
