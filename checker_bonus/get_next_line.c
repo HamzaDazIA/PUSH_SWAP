@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:29:43 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:29:46 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:54:15 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*get_next_line(int fd)
 	while (read_return >= 0)
 	{
 		buff[read_return] = '\0';
-		stord = ft_strjoin(stord, buff);
+		stord = ft_strjoin_get(stord, buff);
 		if (!stord)
 			break;
 		if (ft_find(stord) != -1)

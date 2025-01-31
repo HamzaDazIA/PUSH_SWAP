@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:12:23 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:43:36 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		pointer = ft_check_input_bonus(argc, argv);
+		if (pointer)
+			return (6);
 		stack_a = malloc(sizeof(t_stack *));
 		if (stack_a == NULL)
 			return (free_split(pointer), 1);

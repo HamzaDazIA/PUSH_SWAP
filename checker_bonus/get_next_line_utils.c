@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 11:31:09 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 11:31:13 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:53:58 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*check_nu(char *s1, char *s2)
 	return ((char *)s1);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_get(char *s1, char *s2)
 {
 	int			i;
 	int			j;

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:59:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:28:22 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 13:55:46 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_stack	*ft_last_bonus(t_stack *lst);
 int	ft_lstsize_bonus(t_stack *lst);
 void	ft_lstadd_front_bonus(t_stack **lst, t_stack *new);
 void	ft_putendl_fd_bonus(char *s, int fd);
-
+char	*ft_strjoin(char const *s1, char const *s2);
 // get next line part 
 
 # ifndef BUFFER_SIZE
@@ -61,12 +61,12 @@ void	ft_putendl_fd_bonus(char *s, int fd);
 
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
-char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_stored_string(char **str, int place_nline);
 char	*ft_get(char **storing, int place_nline);
 int		ft_find(const char *str);
 void	*check_null(char **buffer, char **storing);
+char	*ft_strjoin_get(char *s1, char *s2);
 
 #endif
