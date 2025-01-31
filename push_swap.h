@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 08:07:43 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 08:25:11 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 10:59:24 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct s_stack

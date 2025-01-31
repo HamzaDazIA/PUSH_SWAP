@@ -7,7 +7,7 @@ SRC = src/cost_elemrnt.c src/ft_sort_elements.c src/main.c src/move_element.c \
 	  utilid_fonctions/ft_lis.c utilid_fonctions/ft_putendl_fd.c utilid_fonctions/ft_split.c \
 	  utilid_fonctions/ft_strdup.c utilid_fonctions/ft_strjoin.c utilid_fonctions/ft_strlcpy.c \
 	  utilid_fonctions/ft_strlen.c utilid_fonctions/utilis_focntion.c \
-	  utilid_fonctions/utilis_focntion3.c utilid_fonctions/utilis_fonction2.c checker/checker.c
+	  utilid_fonctions/utilis_focntion3.c utilid_fonctions/utilis_fonction2.c checke_input/checker.c 
 
 OBJS = $(SRC:.c=.o)
 CC = cc -Wall -Werror -Wextra
