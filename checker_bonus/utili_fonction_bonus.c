@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:15:25 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:27:26 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/01/31 17:21:31 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,17 @@ char	**ft_join_all_argument_bonus(char **argv, int argc)
 	if (!result)
 		return (NULL);
 	return (result);
+}
+
+void	free_split_bonus(char **pointer)
+{
+	int	i;
+
+	i = 0;
+	while (pointer[i])
+	{
+		free(pointer[i]);
+		i++;
+	}
+	free(pointer);
 }
