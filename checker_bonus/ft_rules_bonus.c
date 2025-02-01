@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 08:04:33 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 13:52:51 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 14:19:41 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	pa_bonus(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_push_bonus(stack_a, stack_b) == 0)
 		return (0);
-	write(1, "fo", 2);
 	return (1);
 }
 
