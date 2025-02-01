@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "sstream": "c",
-        "checker_bonus.h": "c",
-        "string": "c",
-        "iosfwd": "c",
-        "push_swap.h": "c"
-    }
-}
