@@ -6,20 +6,20 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 06:53:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 17:22:04 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 10:54:55 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-static void	ft_print_error_free(char *str, char **pointer)
+static void	print_error_free(char *str, char **pointer)
 {
 	free_split_bonus(pointer);
 	ft_putendl_fd_bonus(str, 1);
 	exit(-1);
 }
 
-static int	ft_is_duplicate(long value, char **av, int i)
+static int	is_duplicate(long value, char **av, int i)
 {
 	i++;
 	while (av[i])
@@ -31,7 +31,7 @@ static int	ft_is_duplicate(long value, char **av, int i)
 	return (1);
 }
 
-static int	ft_is_number(char *str)
+static int	is_number(char *str)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ static int	ft_is_number(char *str)
 	return (1);
 }
 
-static void	ft_check_empty_input(int ac, char **av)
+static void	check_empty_input(int ac, char **av)
 {
 	int	i;
 	int	j;
@@ -75,16 +75,16 @@ static void	ft_check_empty_input(int ac, char **av)
 	}
 }
 
-char	**ft_check_input_bonus(int ac, char **av)
+char	**check_input_bonus(int ac, char **av)
 {
 	long	value;
 	int		i;
 	char	**pointer;
 
 	i = 0;
-	ft_check_empty_input(ac, av);
+	check_empty_input(ac, av);
 	if (ac == 2)
-		pointer = ft_split_bouns(av[1], ' ');
+		pointer = ft_split_bonus(av[1], ' ');
 	else
 		pointer = ft_join_all_argument_bonus(av, ac);
 	if (pointer == NULL)
@@ -92,12 +92,12 @@ char	**ft_check_input_bonus(int ac, char **av)
 	while (pointer[i])
 	{
 		value = ft_atoi_2_bonus(pointer[i], pointer);
-		if (ft_is_number(pointer[i]) == 0)
-			ft_print_error_free("Error", pointer);
-		if (ft_is_duplicate(value, pointer, i) == 0)
-			ft_print_error_free("Error", pointer);
+		if (is_number(pointer[i]) == 0)
+			print_error_free("Error", pointer);
+		if (is_duplicate(value, pointer, i) == 0)
+			print_error_free("Error", pointer);
 		if (value > INT_MAX || value < INT_MIN)
-			ft_print_error_free("Error", pointer);
+			print_error_free("Error", pointer);
 		i++;
 	}
 	return (pointer);

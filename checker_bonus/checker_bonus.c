@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 19:06:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 11:06:48 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	free_element_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-static int	is_already_sortd(t_stack *stack)
+
+static int	is_already_sorted(t_stack *stack)
 {
 	while (stack && stack->next)
 	{
@@ -37,7 +38,7 @@ static int	is_already_sortd(t_stack *stack)
 	return (1);
 }
 
-static void	put_elemen_stack(t_stack **stack, char **pointer)
+static void	put_element_stack(t_stack **stack, char **pointer)
 {
 	t_stack	*new;
 	int		i;
@@ -49,6 +50,7 @@ static void	put_elemen_stack(t_stack **stack, char **pointer)
 		if (new == NULL)
 		{
 			free_split_bonus(pointer);
+			free_element_stack(stack);
 			exit(-1);
 		}
 		ft_lstadd_back_bonus(stack, new);
@@ -57,49 +59,49 @@ static void	put_elemen_stack(t_stack **stack, char **pointer)
 	free_split_bonus(pointer);
 }
 
-int	applying_rules(t_stack **stack_a, t_stack **stack_b, char *str_input)
+static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
 {
-	int	size_b;
-	
+	char	*str_input;
+	int		size_b;
+
 	str_input = get_next_line(0);
 	while (str_input)
 	{
 		if (do_this_rules(stack_a, stack_b, str_input) == -1)
-			return (free(str_input), -1);
-		
+		{
+			free(str_input);
+			return (-1);
+		}
 		free(str_input);
 		str_input = get_next_line(0);
 	}
 	size_b = ft_lstsize_bonus(*stack_b);
-	if (size_b == 0 && !is_already_sortd(stack_b) == 1)
-		return(1);
+	if (size_b == 0 && is_already_sorted(*stack_a))
+		return (1);
 	return (0);
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	**pointer;
-	char	*str_input;
-	
-	if (argc < 2 )
+	int		result;
+
+	if (argc < 2)
 		exit(1);
 	pointer = ft_check_input_bonus(argc, argv);
-	stack_a = malloc(sizeof(t_stack *));
-	if (stack_a == NULL)
-		return (free_split(pointer), 1);
-	stack_b = malloc(sizeof(t_stack *));
-	if (stack_b == NULL)
-		return (free(stack_a), free_split(pointer), 1);
-	*stack_a = NULL;
-	*stack_b = NULL;
-	put_elemen_stack(stack_a, pointer);
-	if (applying_rules(stack_a, stack_b, str_input) == 1)
-		write(1, "OK", 2);
-	else if (applying_rules(stack_a, stack_b, str_input) == -1)
-		write(1, "Error", 5);
-	else if (applying_rules(stack_a, stack_b, str_input) == 0)
-		write(1, "KO", 2);
-	return (free_element_stack(stack_a), free_element_stack(stack_b), free(stack_a), free(stack_b), 0);
+	stack_a = NULL;
+	stack_b = NULL;
+	put_element_stack(&stack_a, pointer);
+	result = applying_rules(&stack_a, &stack_b);
+	if (result == -1)
+		write(1, "Error\n", 6);
+	else if (result == 1)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+	free_element_stack(&stack_a);
+	free_element_stack(&stack_b);
+	return (0);
 }

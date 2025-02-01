@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 08:07:43 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 10:59:24 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 11:15:07 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ size_t	ft_strlen(const char *str);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_isdigit(int c);
 void	ft_print_error(char *str);
-int     find_smallest_position(t_stack **stack_a);
+int		find_smallest_position(t_stack **stack_a);
 
 #endif

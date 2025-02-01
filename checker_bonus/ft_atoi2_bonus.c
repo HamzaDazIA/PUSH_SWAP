@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:07:39 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:24:08 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 08:55:08 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_perror_free(char **pointer)
 {
 	ft_putendl_fd_bonus("Error", 1);
-	free_split(pointer);
+	free_split_bonus(pointer);
 	exit(2);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:29:43 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 13:54:15 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 11:13:10 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*check_null(char **buffer, char **storing)
 	return (*buffer);
 }
 
-int		ft_find(const char *str)
+int	ft_find(const char *str)
 {
 	int	i;
 
@@ -46,6 +46,7 @@ int		ft_find(const char *str)
 char	*ft_get(char **storing, int place_nline)
 {
 	char	*line;
+
 	if (!*storing)
 		return (NULL);
 	line = ft_substr(*storing, 0, place_nline + 1);
@@ -71,7 +72,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stord;
 	char		*buff;
-	ssize_t			read_return;
+	ssize_t		read_return;
 
 	buff = malloc((size_t)BUFFER_SIZE + 1);
 	if (!stord)
@@ -84,7 +85,7 @@ char	*get_next_line(int fd)
 		buff[read_return] = '\0';
 		stord = ft_strjoin_get(stord, buff);
 		if (!stord)
-			break;
+			break ;
 		if (ft_find(stord) != -1)
 			return (free(buff), ft_get(&stord, ft_find(stord)));
 		if (!read_return && !stord[0])

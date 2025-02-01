@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 16:43:42 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 09:03:03 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_push_bonus(t_stack **stack_to, t_stack **stack_from)
 	t_stack	*tmp_to;
 	t_stack	*tmp;
 
-	if (ft_lstsize(*stack_from) == 0)
+	if (ft_lstsize_bonus(*stack_from) == 0)
 		return (0);
 	tmp_from = *stack_from;
 	tmp_to = *stack_to;
@@ -32,6 +32,6 @@ int	ft_push_bonus(t_stack **stack_to, t_stack **stack_from)
 		*stack_to = tmp_to;
 	}
 	else
-		ft_lstadd_front(stack_to, tmp);
+		ft_lstadd_front_bonus(stack_to, tmp);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:53:24 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 16:44:20 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 09:03:43 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	rotate_bonus(t_stack **stack)
 	t_stack	*head;
 	t_stack	*last_node;
 
-	if (ft_lstsize(*stack) < 2)
+	if (ft_lstsize_bonus(*stack) < 2)
 		return (0);
-	last_node = ft_lstlast(*stack);
+	last_node = ft_last_bonus(*stack);
 	head = *stack;
 	last_node->next = head;
 	*stack = head->next;
