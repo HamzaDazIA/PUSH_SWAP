@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:15:25 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 11:14:24 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 13:54:19 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	**ft_join_all_argument_bonus(char **argv, int argc)
 	joined_str = build_joined_str(argc, argv);
 	if (!joined_str)
 		return (NULL);
-	result = ft_split_bouns(joined_str, ' ');
+	result = ft_split_bonus(joined_str, ' ');
 	free(joined_str);
 	if (!result)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 06:53:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 10:54:55 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 13:54:30 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	check_empty_input(int ac, char **av)
 	}
 }
 
-char	**check_input_bonus(int ac, char **av)
+char	**ft_check_input_bonus(int ac, char **av)
 {
 	long	value;
 	int		i;

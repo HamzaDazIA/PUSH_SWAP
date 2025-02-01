@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_bonus.c                                      :+:      :+:    :+:   */
+/*   ft_push_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:19:12 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 17:14:01 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/14 11:50:55 by hdazia            #+#    #+#             */
+/*   Updated: 2025/02/01 13:52:42 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker_bonus.h"
+#include "checker_bonus.h"
 
-int	ra_bonus(t_stack **stack_a)
+int	ft_push_bonus(t_stack **stack_to, t_stack **stack_from)
 {
-	if (rotate_bonus(stack_a) == 0)
+	t_stack	*tmp_from;
+	t_stack	*tmp_to;
+	t_stack	*tmp;
+
+	if (ft_lstsize_bonus(*stack_from) == 0)
 		return (0);
-	return (1);
-}
-
-int	rb_bonus(t_stack **stack_b)
-{
-	if (rotate_bonus(stack_b) == 0)
-		return (0);
-	return (1);
-}
-
-int	rr_bonus(t_stack **stack_a, t_stack **stack_b)
-{
-	rotate_bonus(stack_a);
-	rotate_bonus(stack_b);
+	tmp_from = *stack_from;
+	tmp_to = *stack_to;
+	tmp = tmp_from;
+	tmp_from = tmp_from->next;
+	*stack_from = tmp_from;
+	if (tmp_to == NULL)
+	{
+		tmp_to = tmp;
+		tmp->next = NULL;
+		*stack_to = tmp_to;
+	}
+	else
+		ft_lstadd_front_bonus(stack_to, tmp);
 	return (1);
 }

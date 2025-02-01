@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_rotate_bonus.c                              :+:      :+:    :+:   */
+/*   rules_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:32:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 09:03:25 by hdazia           ###   ########.fr       */
+/*   Created: 2025/01/15 11:19:12 by hdazia            #+#    #+#             */
+/*   Updated: 2025/02/01 13:52:57 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker_bonus.h"
+#include "checker_bonus.h"
 
-int	rev_rotate_bonus(t_stack **stack)
+int	ra_bonus(t_stack **stack_a)
 {
-	t_stack	*head;
-	t_stack	*last_node;
-
-	if (ft_lstsize_bonus(*stack) < 2)
+	if (rotate_bonus(stack_a) == 0)
 		return (0);
-	head = *stack;
-	last_node = ft_last_bonus(*stack);
-	while (head)
-	{
-		if (head->next->next == NULL)
-		{
-			head->next = NULL;
-			break ;
-		}
-		head = head->next;
-	}
-	last_node->next = *stack;
-	*stack = last_node;
+	return (1);
+}
+
+int	rb_bonus(t_stack **stack_b)
+{
+	if (rotate_bonus(stack_b) == 0)
+		return (0);
+	return (1);
+}
+
+int	rr_bonus(t_stack **stack_a, t_stack **stack_b)
+{
+	rotate_bonus(stack_a);
+	rotate_bonus(stack_b);
 	return (1);
 }

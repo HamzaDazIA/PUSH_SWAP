@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 03:53:55 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 12:53:46 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/01 13:54:42 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static int	ft_count_words(const char *s, char ch)
 	return (c_word);
 }
 
-char	**ft_split_bouns(char const *s, char c)
+char	**ft_split_bonus(char const *s, char c)
 {
 	char			**s1;
 	unsigned int	c_words;
