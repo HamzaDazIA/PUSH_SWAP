@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:59:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 11:08:16 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/05 23:06:39 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct str_stack
+{
+	char	*str;
+	struct str_stack *next;
+}	t_str;
 
 char	**ft_check_input_bonus(int ac, char **av);
 long	ft_atoi_2_bonus(const char *str, char **pointer);
@@ -55,6 +61,12 @@ int		ft_lstsize_bonus(t_stack *lst);
 void	ft_lstadd_front_bonus(t_stack **lst, t_stack *new);
 void	ft_putendl_fd_bonus(char *s, int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
+
+// fonction of second struct;
+t_str	*ft_lstnew2_bonus(char *content);
+void	ft_lstadd_back2_bonus(t_str **lst, t_str *new);
+void	free_element_stack2(t_str **stack);
+
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1337

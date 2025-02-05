@@ -14,7 +14,7 @@ BONUS =  checker_bonus/check_input_bonus.c checker_bonus/checker_bonus.c checker
 	checker_bonus/ft_atoi2_bonus.c checker_bonus/ft_atoi_bonus.c checker_bonus/ft_isdigit_bonus.c checker_bonus/ft_lis_bonus.c \
 	checker_bonus/ft_push_bonus.c checker_bonus/ft_putendl_fd_bonus.c checker_bonus/ft_rev_rotate_bonus.c checker_bonus/ft_rotate_bonus.c checker_bonus/ft_rules_bonus.c \
 	checker_bonus/ft_split.c checker_bonus/ft_strjoin_bonus.c checker_bonus/ft_swap_bonus.c checker_bonus/get_next_line.c checker_bonus/get_next_line_utils.c checker_bonus/rules_bonus.c\
- 	checker_bonus/rules_rev_bonus.c checker_bonus/utili_fonction_bonus.c
+ 	checker_bonus/rules_rev_bonus.c checker_bonus/utili_fonction_bonus.c 
 
 OBJS = $(SRC:.c=.o)
 OBJSB = $(BONUS:.c=.o)
