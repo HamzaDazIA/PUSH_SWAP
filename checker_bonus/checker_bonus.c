@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/05 23:17:37 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/06 00:37:27 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ static void	put_element_stack(t_stack **stack, char **pointer)
 	}
 	free_split_bonus(pointer);
 }
-/*
 static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*str_input;
@@ -74,34 +73,6 @@ static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
 		}
 		free(str_input);
 		str_input = get_next_line(0);
-	}
-	size_b = ft_lstsize_bonus(*stack_b);
-	if (size_b == 0 && is_already_sorted(*stack_a))
-		return (1);
-	return (0);
-}
-*/
-static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
-{
-	t_str	*s;
-	int		size_b;
-	char *str;
-	
-	str = get_next_line(0);
-	while (str)
-	{
-		ft_lstadd_back2_bonus(&s, ft_lstnew2_bonus(str));
-		free(str);
-		str = get_next_line(0);
-	}
-	while (s)
-	{
-		if (do_this_rules(stack_a, stack_b, s->str) == -1)
-		{
-			free_element_stack2(&s);
-			return(-1);
-		}
-		s = s->next;
 	}
 	size_b = ft_lstsize_bonus(*stack_b);
 	if (size_b == 0 && is_already_sorted(*stack_a))
@@ -124,7 +95,7 @@ int	main(int argc, char **argv)
 	put_element_stack(&stack_a, pointer);
 	result = applying_rules(&stack_a, &stack_b);
 	if (result == -1)
-		write(1, "Error\n", 6);
+		write(1, "Error\n", 7);
 	else if (result == 1)
 		write(1, "OK\n", 3);
 	else
