@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/06 17:37:43 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/07 13:28:06 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
 	{
 		if (do_this_rules(stack_a, stack_b, s->str) == -1)
 		{
-			free_element_stack_bonus2(&s);
-			return (-1);
+			return (free_element_stack_bonus2(&s), -1);
 		}
 		s = s->next;
 	}
