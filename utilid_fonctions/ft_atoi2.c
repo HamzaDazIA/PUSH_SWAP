@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:07:39 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/30 22:31:04 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/07 13:53:29 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_perror_free(char **pointer)
 {
 	ft_putendl_fd("Error", 1);
 	ft_free_split(pointer);
-	exit(2);
+	exit(1);
 }
 
 long	ft_atoi_2(const char *str, char **pointer)

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 08:27:19 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 14:04:38 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/07 13:53:33 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_join_all_argument(char **argv, int argc)
 void	ft_print_error(char *str)
 {
 	ft_putendl_fd(str, 1);
-	exit(-1);
+	exit(1);
 }
 
 void	rotate_stack_a(t_stack **stack_a)

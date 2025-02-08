@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 06:53:23 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/01 13:54:30 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/07 13:53:15 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	print_error_free(char *str, char **pointer)
 {
 	free_split_bonus(pointer);
 	ft_putendl_fd_bonus(str, 1);
-	exit(-1);
+	exit(1);
 }
 
 static int	is_duplicate(long value, char **av, int i)
@@ -88,7 +88,7 @@ char	**ft_check_input_bonus(int ac, char **av)
 	else
 		pointer = ft_join_all_argument_bonus(av, ac);
 	if (pointer == NULL)
-		exit(-1);
+		exit(1);
 	while (pointer[i])
 	{
 		value = ft_atoi_2_bonus(pointer[i], pointer);

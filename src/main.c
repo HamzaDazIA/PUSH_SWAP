@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 08:34:27 by hdazia            #+#    #+#             */
-/*   Updated: 2025/01/31 09:40:23 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/08 14:55:00 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	necessary_ft(t_stack **stack, char **pointer)
 		if (new == NULL)
 		{
 			ft_free_split(pointer);
-			exit(-1);
+			exit(1);
 		}
 		ft_lstadd_back(stack, new);
 		i++;
