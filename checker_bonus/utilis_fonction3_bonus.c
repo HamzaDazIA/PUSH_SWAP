@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:55:07 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/06 17:42:50 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/08 16:20:04 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,32 @@ char	*ft_strdup_bonus(const char *s1)
 		return (NULL);
 	ft_strlcpy(dst, s1, len + 1);
 	return (dst);
+}
+int	check_input_rules(char *str_input)
+{
+	if (ft_strcmp(str_input, "pa\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "pb\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "sa\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "sb\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "ss\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "ra\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "rb\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "rr\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "rra\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "rrb\n") == 0)
+		return (1);
+	else if (ft_strcmp(str_input, "rrr\n") == 0)
+		return (1);
+	else
+		return (-1);
+	return (1);
 }

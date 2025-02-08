@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:58:14 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/07 13:53:18 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/08 16:26:18 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,28 @@ static void	put_element_stack(t_stack **stack, char **pointer)
 static int	applying_rules(t_stack **stack_a, t_stack **stack_b)
 {
 	t_str	*s;
-	int		size_b;
 	char	*str;
+	t_str	*tmp;
 
 	s = NULL;
 	str = get_next_line(0);
 	while (str)
 	{
+		if (check_input_rules(str) == -1)
+			return(free_element_stack_bonus2(&s), -1);
 		ft_lstadd_back2_bonus(&s, ft_lstnew2_bonus(str));
 		free(str);
 		str = get_next_line(0);
 	}
-	while (s)
+	tmp = s;
+	while (tmp)
 	{
-		if (do_this_rules(stack_a, stack_b, s->str) == -1)
-		{
+		if (do_this_rules(stack_a, stack_b, tmp->str) == -1)
 			return (free_element_stack_bonus2(&s), -1);
-		}
-		s = s->next;
+		tmp = tmp->next;
 	}
 	free_element_stack_bonus2(&s);
-	size_b = ft_lstsize_bonus(*stack_b);
-	if (size_b == 0 && is_already_sorted(*stack_a))
+	if (ft_lstsize_bonus(*stack_b) == 0 && is_already_sorted(*stack_a))
 		return (1);
 	return (0);
 }

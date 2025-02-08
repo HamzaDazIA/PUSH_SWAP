@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:59:36 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/06 17:45:48 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/08 16:27:01 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int		rr_bonus(t_stack **stack_a, t_stack **stack_b);
 int		rra_bonus(t_stack **stack_a);
 int		rrb_bonus(t_stack **stack_b);
 void	rrr_bonus(t_stack **stack_a, t_stack **stack_b);
+int		check_input_rules(char *str_input);
+int		ft_strcmp(char *s1, char *s2);
 
 int		do_this_rules(t_stack **stack_a, t_stack **stack_b, char *str_input);
 void	free_split_bonus(char **pointer);
