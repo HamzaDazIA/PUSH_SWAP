@@ -64,7 +64,7 @@ char	**ft_join_all_argument(char **argv, int argc)
 
 void	ft_print_error(char *str)
 {
-	ft_putendl_fd(str, 1);
+	ft_putendl_fd(str, 2);
 	exit(1);
 }
 

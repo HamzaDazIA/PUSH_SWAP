@@ -14,7 +14,7 @@
 
 static void	ft_perror_free(char **pointer)
 {
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd("Error", 2);
 	ft_free_split(pointer);
 	exit(1);
 }
