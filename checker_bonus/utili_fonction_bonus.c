@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:15:25 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/07 13:53:25 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:47:41 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_error_bonus(char *str)
 {
-	ft_putendl_fd_bonus(str, 1);
+	ft_putendl_fd_bonus(str, 2);
 	exit(1);
 }
 

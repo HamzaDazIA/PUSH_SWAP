@@ -24,14 +24,19 @@ RM = rm -f
 
 all: $(NAME)
 
-%.o: %.c push_swap.h checker_bonus/checker_bonus.h
+utilid_fonctions/%.o: utilid_fonctions/%.c push_swap.h
 	$(CC) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
-bonus: $(OBJSB)
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJSB)
 	$(CC) $(OBJSB) -o $(NAME_BONUS)
+
+checker_bonus/%.o: checker_bonus/%.c checker_bonus/checker_bonus.h
+	$(CC) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(OBJSB)

@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:55:07 by hdazia            #+#    #+#             */
-/*   Updated: 2025/02/08 16:20:04 by hdazia           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:49:17 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	*ft_strdup_bonus(const char *s1)
 	ft_strlcpy(dst, s1, len + 1);
 	return (dst);
 }
+
 int	check_input_rules(char *str_input)
 {
 	if (ft_strcmp(str_input, "pa\n") == 0)
