@@ -10,11 +10,11 @@ SRC = src/cost_elemrnt.c src/ft_sort_elements.c src/main.c src/move_element.c \
       utilid_fonctions/ft_strlen.c utilid_fonctions/utilis_focntion.c \
       utilid_fonctions/utilis_focntion3.c utilid_fonctions/utilis_fonction2.c checke_input/checker.c 
 
-BONUS =  checker_bonus/check_input_bonus.c checker_bonus/checker_bonus.c checker_bonus/do_relus_bonus.c \
+BONUS = checker_bonus/check_input_bonus.c checker_bonus/checker_bonus.c checker_bonus/do_relus_bonus.c \
 	checker_bonus/ft_atoi2_bonus.c checker_bonus/ft_atoi_bonus.c checker_bonus/ft_isdigit_bonus.c checker_bonus/ft_lis_bonus.c \
 	checker_bonus/ft_push_bonus.c checker_bonus/ft_putendl_fd_bonus.c checker_bonus/ft_rev_rotate_bonus.c checker_bonus/ft_rotate_bonus.c checker_bonus/ft_rules_bonus.c \
 	checker_bonus/ft_split_bonus.c checker_bonus/ft_strjoin_bonus.c checker_bonus/ft_swap_bonus.c checker_bonus/get_next_line.c checker_bonus/get_next_line_utils.c checker_bonus/rules_bonus.c\
- 	checker_bonus/rules_rev_bonus.c checker_bonus/utili_fonction_bonus.c  checker_bonus/utilis_fonction2_bonus.c checker_bonus/utilis_fonction3_bonus.c \
+ 	checker_bonus/rules_rev_bonus.c checker_bonus/utili_fonction_bonus.c  checker_bonus/utilis_fonction2_bonus.c checker_bonus/utilis_fonction3_bonus.c
 
 OBJS = $(SRC:.c=.o)
 OBJSB = $(BONUS:.c=.o)
@@ -24,9 +24,9 @@ RM = rm -f
 
 all: $(NAME)
 
-utilid_fonctions/%.o: utilid_fonctions/%.c push_swap.h
+%.o: %.c
 	$(CC) -c $< -o $@
-
+	
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
@@ -35,8 +35,9 @@ bonus: $(NAME_BONUS)
 $(NAME_BONUS): $(OBJSB)
 	$(CC) $(OBJSB) -o $(NAME_BONUS)
 
-checker_bonus/%.o: checker_bonus/%.c checker_bonus/checker_bonus.h
-	$(CC) -c $< -o $@
+$(OBJS): push_swap.h
+$(OBJSB): checker_bonus/checker_bonus.h
+
 
 clean:
 	$(RM) $(OBJS) $(OBJSB)
@@ -46,4 +47,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:  clean 
+.PHONY: all bonus clean fclean re
