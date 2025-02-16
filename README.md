@@ -89,3 +89,8 @@ ARG=$(shuf -i 0-1000 -n 500); ./push_swap $ARG | ./checker_linux $ARG
 
 - [Push Swap PDF Guide](https://web.archive.org/web/20220802162832/https://www.codequoi.com/wp-content/uploads/2022/06/push_swap.en_.subject.pdf)
 - [42 School Resources](https://web.archive.org/web/20220802162832/https://www.codequoi.com/en/category/42-school-projects/)
+
+
+-----------------------------------
+by ana ;
+test by zaissi (ziyos);
