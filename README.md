@@ -92,5 +92,5 @@ ARG=$(shuf -i 0-1000 -n 500); ./push_swap $ARG | ./checker_linux $ARG
 
 
 -----------------------------------
-by ana ;
-test by zaissi (ziyos);
+by ana 
+test by zaissi (ziyos)
